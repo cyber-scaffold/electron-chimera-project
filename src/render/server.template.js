@@ -1,13 +1,13 @@
-import React from "react";
+// import React from "react";
 import cheerio from "cheerio";
-import ReactDOM from "react-dom/server";
+// import ReactDOM from "react-dom/server";
 
-import { I18nextProvider } from "react-i18next";
-import { StaticRouter } from "react-router-dom/server";
+// import { I18nextProvider } from "react-i18next";
+// import { StaticRouter } from "react-router-dom/server";
 
-import init18n from "@/init18n";
-import MainBlock from "@/entry";
-import { RenderContextProvider } from "./render_context";
+// import init18n from "@/init18n";
+// import MainBlock from "@/entry";
+// import { RenderContextProvider } from "./render_context";
 
 export async function server_render({ title, keywords, description, html_template, basename, language, location, dev_inject, initial_value }) {
   const $ = cheerio.load(html_template);
@@ -36,15 +36,15 @@ export async function server_render({ title, keywords, description, html_templat
     $("head").append(`<script>window.initial_value=${JSON.stringify(initial_value)}</script>`);
   };
   /** 服务端渲染结构 **/
-  $("#root").append(ReactDOM.renderToString(
-    <I18nextProvider i18n={init18n(language)}>
-      <StaticRouter basename={basename} location={location}>
-        <RenderContextProvider initial_value={initial_value}>
-          <MainBlock />
-        </RenderContextProvider>
-      </StaticRouter>
-    </I18nextProvider>
-  ));
+  // $("#root").append(ReactDOM.renderToString(
+  //   <I18nextProvider i18n={init18n(language)}>
+  //     <StaticRouter basename={basename} location={location}>
+  //       <RenderContextProvider initial_value={initial_value}>
+  //         <MainBlock />
+  //       </RenderContextProvider>
+  //     </StaticRouter>
+  //   </I18nextProvider>
+  // ));
   return $.html();
 };
 

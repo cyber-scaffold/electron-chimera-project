@@ -30,6 +30,7 @@
     "@babel/register": "7.15.3",
     "cheerio": "^1.0.0-rc.12",
     "exceljs": "^4.3.0",
+    "cross-spawn": "^7.0.3",
     "path-to-regexp": "6.2.0"
   },
   "devDependencies": {
@@ -52,7 +53,6 @@
     "babel-eslint": "10.1.0",
     "babel-plugin-import": "1.13.5",
     "cross-env": "7.0.3",
-    "cross-spawn": "^7.0.3",
     "electron": "12.0.18",
     "electron-builder": "22.14.13",
     "electron-reload": "^2.0.0-alpha.1",

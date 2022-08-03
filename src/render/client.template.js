@@ -10,7 +10,7 @@ import { RenderContextProvider } from "./render_context";
 
 (async () => {
   const initial_value = window.initial_value;
-  ReactDOM.hydrate((
+  ReactDOM.render((
     <I18nextProvider i18n={init18n(window.language)}>
       <BrowserRouter basename={window.basename}>
         <RenderContextProvider initial_value={initial_value}>

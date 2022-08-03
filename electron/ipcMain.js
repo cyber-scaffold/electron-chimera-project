@@ -1,17 +1,22 @@
-import fs from "fs";
 import path from "path";
-import { promisify } from "util";
-import { ipcMain, dialog, shell } from "electron";
+import { ipcMain } from "electron";
+import { exec } from "child_process";
 
-const static_path = path.resolve(__dirname, "../statics/test.txt");
+const python_runtime_path = path.resolve(__dirname, "../python-runtime/macos/30912/bin/python3");
+const test_file_path = path.resolve(__dirname, "../python-runtime/json_demo.py");
 
-ipcMain.handle("web-boot-strap", async (event, args) => {
-  const static_content = await promisify(fs.readFile)(static_path, "utf-8");
-  const { canceled, filePath } = await dialog.showSaveDialog();
-  if (canceled) {
-    return "已取消";
-  };
-  await promisify(fs.writeFile)(filePath, static_content);
-  await shell.showItemInFolder(filePath);
-  return "已保存";
+
+ipcMain.handle("test", async (event, args) => {
+  const result = await new Promise((resolve, reject) => {
+    exec(`${python_runtime_path} ${test_file_path}`, (error, stdout, stderr) => {
+      if (error) {
+        return reject(error);
+      };
+      if (stderr) {
+        return reject(stderr);
+      };
+      resolve(stdout);
+    });
+  });
+  return result;
 });
