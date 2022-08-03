@@ -19,11 +19,8 @@
     "build:win:only": "electron-builder --windows --ia32 --config=electron-builder-win.json",
     "build:mac:dist": "npm run build:dist && npm run build:mac:only",
     "build:win:dist": "npm run build:dist && npm run build:win:only",
-    "lint:script": "eslint --fix --ext .js,.jsx src",
-    "lint:style": "stylelint \"src/**/*.less\" --syntax less",
     "ico": "png-to-ico ./build/icon.png > ./build/installerIcon.ico",
-    "icns": "png2icons ./build/icon.png ./build/icon -icns -bc -i",
-    "precommit": "lint-staged"
+    "icns": "png2icons ./build/icon.png ./build/icon -icns -bc -i"
   },
   "dependencies": {
     "@babel/core": "7.15.0",
