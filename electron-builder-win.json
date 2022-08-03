@@ -5,9 +5,7 @@
   "directories": {
     "output": "./assets/electron-builder-win/"
   },
-  "extraResources": [
-    "./extraResources/**"
-  ],
+  "asar": false,
   "mac": {
     "entitlements": "./entitlements.mac.plist",
     "hardenedRuntime": true,

@@ -11,6 +11,7 @@
   },
   "description": "基于chimera||koa2搭建的electron项目",
   "scripts": {
+    "py:build": "pyinstaller -F ./statics/json_demo.py",
     "dev:web:local": "cross-env CHIMERA_RUNTIME=local spa-build-tools dev",
     "dev:client:local": "cross-env PROCESS_ENV=development electronmon electron-main.js",
     "dev:client:prod": "cross-env PROCESS_ENV=production electronmon electron-main.js",
