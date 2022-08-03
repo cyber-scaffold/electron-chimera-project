@@ -1,10 +1,13 @@
 {
-  "appId": "electron-umi-project",
-  "productName": "electron-umi-project",
+  "appId": "electron-chimera-project",
+  "productName": "electron-chimera-project",
   "copyright": "",
   "directories": {
     "output": "./assets/electron-builder-win/"
   },
+  "extraResources": [
+    "./extraResources/**"
+  ],
   "mac": {
     "entitlements": "./entitlements.mac.plist",
     "hardenedRuntime": true,

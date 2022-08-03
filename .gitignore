@@ -1,7 +1,5 @@
-/temp/
 /dist/
 /assets/
-/python-runtime/
 /node_modules/
 **/.DS_Store
 package-lock.json

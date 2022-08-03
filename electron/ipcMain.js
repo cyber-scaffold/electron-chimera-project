@@ -2,9 +2,8 @@ import path from "path";
 import { ipcMain } from "electron";
 import { exec } from "child_process";
 
-const python_runtime_path = path.resolve(__dirname, "../python-runtime/macos/30912/bin/python3");
-const test_file_path = path.resolve(__dirname, "../python-runtime/json_demo.py");
-
+const python_runtime_path = path.resolve(__dirname, "../extraResources/macos/30912/bin/python3");
+const test_file_path = path.resolve(__dirname, "../extraResources/json_demo.py");
 
 ipcMain.handle("test", async (event, args) => {
   const result = await new Promise((resolve, reject) => {
