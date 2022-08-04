@@ -1,5 +1,6 @@
 /dist/
 /assets/
+/statics/30912/
 /node_modules/
 **/.DS_Store
 package-lock.json

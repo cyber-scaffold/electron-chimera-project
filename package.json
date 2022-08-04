@@ -1,7 +1,8 @@
 {
   "private": true,
-  "name": "electron-chimera-project",
   "version": "1.0.0",
+  "author": "1542874601@qq.com",
+  "name": "electron-chimera-project",
   "main": "./electron-main.js",
   "electronmon": {
     "patterns": [
@@ -11,12 +12,11 @@
   },
   "description": "基于chimera||koa2搭建的electron项目",
   "scripts": {
-    "py:build": "pyinstaller -F ./statics/json_demo.py",
     "dev:web:local": "cross-env CHIMERA_RUNTIME=local spa-build-tools dev",
     "dev:client:local": "cross-env PROCESS_ENV=development electronmon electron-main.js",
     "dev:client:prod": "cross-env PROCESS_ENV=production electronmon electron-main.js",
     "build:dist": "spa-build-tools build",
-    "build:mac:only": "electron-builder --universal --config=electron-builder-mac.json",
+    "build:mac:only": "electron-builder --macos --config=electron-builder-mac.json",
     "build:win:only": "electron-builder --windows --ia32 --config=electron-builder-win.json",
     "build:mac:dist": "npm run build:dist && npm run build:mac:only",
     "build:win:dist": "npm run build:dist && npm run build:win:only",
@@ -38,7 +38,7 @@
     "path-to-regexp": "6.2.0"
   },
   "devDependencies": {
-    "@cyber-chimera/spa-build-tools": "^5.0.0",
+    "@cyber-chimera/spa-build-tools": "^5.1.0",
     "@koa/router": "^12.0.0",
     "@typescript-eslint/eslint-plugin": "5.19.0",
     "@typescript-eslint/parser": "5.19.0",
@@ -48,9 +48,8 @@
     "cross-env": "7.0.3",
     "electron": "12.0.18",
     "electron-builder": "22.14.13",
-    "electron-reload": "^2.0.0-alpha.1",
     "electron-updater": "4.3.9",
-    "electronmon": "^2.0.2",
+    "electronmon": "2.0.2",
     "eslint": "6.8.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-prettier": "3.6.0",
